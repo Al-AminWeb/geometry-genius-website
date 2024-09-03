@@ -3,98 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <title>Geometry Genius</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="m-8">
-    <header>
+<header>
 
-    </header>
-    <main>
-<!--      main content container-->
-      <div class="flex flex-col md:flex-row">
-<!--        shape card container-->
+</header>
+<main>
+    <!--      main content container-->
+    <div class="flex flex-col md:flex-row">
+        <!--        shape card container-->
         <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
-<!--          Triangle card -->
-          <div class="card bg-base-100 w-80 shadow-xl">
-            <figure>
-                <img src="images/triangle.png" alt="">
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Triangle</h2>
-              <p>Area (A) = 0.5 X b X h</p>
-                <div>
-                    <input id="triangle-base" class="w-24 text-2xl p-2 rounded-sm" type="text" placeholder="b">
-                    <span class="ml-2 ">cm</span>
-                    <input id="triangle-height" class="w-24 text-2xl p-2 rounded-sm" type="text" placeholder="h">
-                    <span >cm</span>
+            <!--          Triangle card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img alt="" src="images/triangle.png">
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Triangle</h2>
+                    <p>Area (A) = 0.5 X b X h</p>
+                    <div>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="triangle-base" placeholder="b" type="text">
+                        <span class="ml-2 ">cm</span>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="triangle-height" placeholder="h" type="text">
+                        <span>cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="triangle-area"></span><span>cm<sup>2</sup> </span></p>
+                    </div>
+                    <div class="card-actions ">
+                        <button class="btn btn-primary w-full" onclick="calculateTriangleArea()">Calculate</button>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-2xl">Area: <span id="triangle-area"></span><span>cm<sup>2</sup> </span></p>
-                </div>
-              <div class="card-actions ">
-                <button onclick="calculateTriangleArea()" class="btn btn-primary w-full">Calculate</button>
-              </div>
             </div>
-          </div>
-          <!--          Rectangle card -->
-          <div class="card bg-base-100 w-80 shadow-xl">
-            <figure>
-              <img
-                      src="images/rectangle.png"
-                      alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Rectangle</h2>
-              <p> Area (A) = w x l</p>
-                  <div>
-                      <input id="rectangle-weight" class="w-24 text-2xl p-2 rounded-sm"  type="text" placeholder="w">
-                      <span class="ml-2">cm</span>
-                      <input id="rectangle-length" class="w-24 text-2xl p-2 rounded-sm" type="text" placeholder="l">
-                      <span>cm</span>
-                  </div>
-                <button onclick="calculateRectangleArea()" class="btn btn-primary w-full">Calculate</button>
+            <!--          Rectangle card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img
+                            alt="Shoes"
+                            src="images/rectangle.png"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Rectangle</h2>
+                    <p> Area (A) = w x l</p>
+                    <div>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="rectangle-width" placeholder="w" type="text">
+                        <span class="ml-2">cm</span>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="rectangle-length" placeholder="l" type="text">
+                        <span>cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="rectangle-area">0</span><span>cm<sup>2</sup></span></p>
+                    </div>
+                    <button class="btn btn-primary w-full" onclick="calculateRectangleArea()">Calculate</button>
 
+                </div>
             </div>
-          </div>
-          <!--          Triangle card -->
-          <div class="card bg-base-100 w-80 shadow-xl">
-            <figure>
-              <img
-                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                      alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
-              </div>
+            <!--          Parallelogram card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img alt="" src="images/parallelogram.png">
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Parallelogram</h2>
+                    <p>Area = b X h</p>
+                    <div>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="parallelogram-base" placeholder="b" type="text">
+                        <span class="ml-2 ">cm</span>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="parallelogram-height" placeholder="h" type="text">
+                        <span>cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="parallelogram-area"></span><span>cm<sup>2</sup> </span></p>
+                    </div>
+                    <div class="card-actions ">
+                        <button class="btn btn-primary w-full" onclick="parallelogramCalculate()">Calculate</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!--          Triangle card -->
-          <div class="card bg-base-100 w-80 shadow-xl">
-            <figure>
-              <img
-                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                      alt="Shoes" />
-            </figure>
-            <div class="card-body">
-              <h2 class="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
-              </div>
+            <!--          Rhombus card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img alt="" src="images/parallelogram.png">
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Rhombus</h2>
+                    <p>Area = 0.5 X d<sub>1</sub> X d<sub>2</sub></p>
+                    <div>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="rhombus-one" placeholder="d1" type="text">
+                        <span class="ml-2 ">cm</span>
+                        <input class="w-24 text-2xl p-2 rounded-sm" id="rhombus-two" placeholder="d2" type="text">
+                        <span>cm</span>
+                    </div>
+                    <div>
+                        <p class="text-2xl">Area: <span id="rhombus-area"></span><span>cm<sup>2</sup> </span></p>
+                    </div>
+                    <div class="card-actions ">
+                        <button class="btn btn-primary w-full" onclick="rhombusCalculate()">Calculate</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div >
-<!--        Area calculation Container-->
-        <div class="w-96 border-2 border-gray-700 rounded-md">
-          <h3 class="text-3xl text-center p-4">Area Calculation</h3>
+            <!--          Triangle card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img
+                            alt="Shoes"
+                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Shoes!</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <!--          Triangle card -->
+            <div class="card bg-base-100 w-80 shadow-xl">
+                <figure>
+                    <img
+                            alt="Shoes"
+                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"/>
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Shoes!</h2>
+                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </main>
-    <script src="scripts/triangle-calculate.js"></script>
-    <script src="scripts/rectangle-calculate.js"></script>
+        <!--        Area calculation Container-->
+        <div class="w-96 border-2 border-gray-700 rounded-md">
+            <h3 class="text-3xl text-center p-4">Area Calculation</h3>
+        </div>
+    </div>
+</main>
+<script src="scripts/triangle-calculate.js"></script>
+<script src="scripts/rectangle-calculate.js"></script>
+<script src="scripts/Parallelogram-calculate.js"></script>
+<script src="scripts/rhombus-calculate.js"></script>
 </body>
 </html>
