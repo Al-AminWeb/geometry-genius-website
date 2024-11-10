@@ -1,13 +1,15 @@
-function rhombusCalculate() {
-    const rhombusOneInput = document.getElementById("rhombus-one");
-    const rhombusOneText = rhombusOneInput.value;
-    const rhombusOne = parseFloat(rhombusOneText)
+function calculateRhombus() {
+ const rhombusOne = document.getElementById("rhombus-one").value;
+ const one = parseFloat(rhombusOne);
 
-    const rhombusTwoInput = document.getElementById("rhombus-two");
-    const rhombusTwoText = rhombusTwoInput.value;
-    const rhombusTwo = parseFloat(rhombusTwoText);
+ const rhombusTwo = document.getElementById("rhombus-two").value;
 
-   const  area = 0.5 * rhombusOne * rhombusTwo;
-    const rhombusArea = document.getElementById("rhombus-area");
-    rhombusArea.innerText = area;
+ const two = parseFloat(rhombusTwo);
+
+  area = 0.5 * one * two;
+
+  const rhombusArea = document.getElementById("rhombus-area");
+
+  rhombusArea.innerText = area ;
+
 }

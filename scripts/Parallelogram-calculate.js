@@ -1,13 +1,21 @@
-// function parallelogramCalculate() {
-//     const baseInput = document.getElementById('parallelogram-base');
-//     const baseText = baseInput.value;
-//     const base = parseFloat(baseText);
-//
-//     const heightInput = document.getElementById('parallelogram-height');
-//     const heightText = heightInput.value;
-//     const height = parseFloat(heightText);
-//
-//     const area = base * height;
-//     const parallelogramAreaSpan = document.getElementById("parallelogram-area");
-//     parallelogramAreaSpan.innerText = area;
-// }
+function parallelogramCalculate() {
+    const base = getInputValueById("parallelogram-base")
+    const height = getInputValueById("parallelogram-height")
+    const area = base * height;
+
+    setInnerTextById("parallelogram-area", area);
+}
+
+
+function getInputValueById(inputFieldId) {
+    const inputField = document.getElementById(inputFieldId);
+    const inputValueText = inputField.value;
+    const inputValue = parseFloat(inputValueText);
+    return inputValue;
+}
+
+function setInnerTextById(elementId, area) {
+    const pElement = document.getElementById(elementId);
+
+   pElement.innerText = area ;
+}

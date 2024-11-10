@@ -1,14 +1,15 @@
-function calculateRectangleArea(){
-   const lengthInput = document.getElementById("rectangle-length");
-   const lengthText = lengthInput.value;
-   const length = parseFloat(lengthText);
+function calculateRectangleArea() {
+   const rectangleWidth = document.getElementById("rectangle-width").value;
+   const width= parseFloat(rectangleWidth);
 
 
-   const widthInput = document.getElementById("rectangle-width");
-   const widthText = widthInput.value;
-   const width = parseFloat(widthText);
 
-   const area = width * length;
-   const rectangleAreaSpan = document.getElementById("rectangle-area");
-   rectangleAreaSpan.innerText = area;
+   const rectangleLength = document.getElementById("rectangle-length").value;
+   const length= parseFloat(rectangleLength);
+
+  const area = width * length;
+
+  const rectangleArea = document.getElementById("rectangle-area");
+
+  rectangleArea.innerText = area ;
 }
